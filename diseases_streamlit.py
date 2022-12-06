@@ -6,17 +6,19 @@ import joblib
 from fuzzywuzzy import fuzz
 from streamlit_tags import st_tags, st_tags_sidebar
 
+st.title(.                     \"OMEN"\)
+st.subheader("We are happy to help you today.\
+ Please choose the number of health problems that you are experiencing by sliding below\
+     \.You will be able to enter your problem in short keywords. Leave rest to us.")
+
 
 tab1, tab2, tab3 = st.tabs(["General Information", "Questions", "Predictions"])
 
 with tab1:
 
-    st.title("OMEN")
+    
 
-    st.subheader("We are happy to help you today.\
- Please choose the number of health problems that you are experiencing by sliding below\
-     \.You will be able to enter your problem in short keywords. Leave rest to us.")
-
+    
     
     
     
