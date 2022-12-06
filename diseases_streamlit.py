@@ -6,7 +6,7 @@ import joblib
 from fuzzywuzzy import fuzz
 from streamlit_tags import st_tags, st_tags_sidebar
 
-st.title(                     \"OMEN"\)
+st.title(                     \OMEN\)
 st.subheader("We are happy to help you today.\
  Please choose the number of health problems that you are experiencing by sliding below\
      \.You will be able to enter your problem in short keywords. Leave rest to us.")
