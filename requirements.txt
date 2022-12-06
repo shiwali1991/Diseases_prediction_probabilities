@@ -2,4 +2,4 @@ pandas
 joblib
 fuzzywuzzy
 streamlit_tags
-scikit-learn
+scikit-learn==1.0.2
