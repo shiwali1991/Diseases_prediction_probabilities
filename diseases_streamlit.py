@@ -74,12 +74,14 @@ with tab1:
     #if st.button("Please Click Here"):
         
     with tab2:
-        with st.expander("questions"):
-            x = store_symptoms(data)
-            patient_input = {**patient_input, **x}
-            #patient_input.update(x)
-            patient_data = pd.DataFrame([patient_input])
-            #st.write(patient_data)
+        x = store_symptoms(data)
+        patient_input = {**patient_input, **x}
+        #patient_input.update(x)
+        patient_data = pd.DataFrame([patient_input])
+        #st.write(patient_data)
+     
+        
+           
     with tab3:
 
         def predict_diseases(patient_data):
