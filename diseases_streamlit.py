@@ -6,20 +6,23 @@ import joblib
 from fuzzywuzzy import fuzz
 from streamlit_tags import st_tags, st_tags_sidebar
 
-#"Chest pain"
-tab1, tab2, tab3 = st.tabs(["General_info", "questions", "predictions"])
+
+tab1, tab2, tab3 = st.tabs(["General Information", "Questions", "Predictions"])
 
 with tab1:
 
-    st.title("Diseases Probabilities Prediction")
+    st.title("OMEN")
 
-    st.header("We are delighted to help you today")
+    st.subheader("We are happy to help you today. 
+                 Please choose the number of health problems that you are experiencing by sliding below. 
+                 You will be able to enter your problem in short keywords. Leave rest to us.")
 
-    st.caption("Please feel free to specify your complaints in the box below:")
     
     
-    maxtags = st.slider('Number of tags allowed?', 1, 10, 3, key='jfnkerrnfvikwqejn')
-        
+    
+    maxtags = st.slider('Please slide here for the number of problems:', 1, 10, 3, key='jfnkerrnfvikwqejn')
+    
+    st.subheader("Please feel free to specify your problems in the box below:")
     keywords_ = st_tags(
     label='# Enter Keywords:',
     text='Press enter to add more',
@@ -30,6 +33,7 @@ with tab1:
     
     disease_dict = {}
     
+                 
     for item in keywords_:
         for key, value in keywords_dict.items():
             if item in value:
@@ -44,7 +48,6 @@ with tab1:
                                      "model": joblib.load(f'model_pipeline_{key}.pkl')}
                         #st.write(item, match_ratio, item_) 
                         
-    st.write(disease_dict.keys())
 
     age = st.number_input("Please mention your age", min_value=0, max_value=100)
     gender = st.selectbox("Are you male/female", options = ["M", "F"])
